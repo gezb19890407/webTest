@@ -1,0 +1,165 @@
+﻿.imageOperate_BorderDiv
+{
+    display: inline-block;
+    position: relative;
+    margin-right: 2px;
+}
+.imageOperate_BorderImage
+{
+    border: 2px solid #e7e7e7;
+    padding: 0;
+    border-radius: 2px;
+    width: 48px;
+    height: 48px;
+}
+.imageOperate_BorderImage:hover
+{
+    cursor: pointer;
+}
+.imageOperate_OverLoad
+{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    z-index: 2;
+    margin-top: -48px;
+    background: rgba(0,0,0,0.5) url("image/image_cxjz.png") no-repeat center center;
+    border-radius: 2px;
+    cursor: pointer;
+    display: none;
+}
+.imageOperate_FullScreen
+{
+    position: fixed;
+    background-color: rgba(10, 10, 10, 0.8);
+    display: block;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    z-index: 501;
+}
+.imageOperate_FullScreenImg
+{
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+}
+.imageOperate_CloseImg
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 60px;
+    background: url("image/rwgz_close.png") no-repeat right 0;
+}
+.imageOperate_CloseImg:hover
+{
+    cursor: pointer;
+    background: url("image/rwgz_close_pre.png") no-repeat right 0;
+}
+.imageOperate_IframeDiv
+{
+    width: 70%;
+    min-width: 800px;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    background: #fff;
+    display: none;
+}
+.imageOperate_QueryIframe
+{
+    width: 100%;
+    height: 100%;
+}
+.imageOperate_ContentNoticeImageActive
+{
+    border: 2px solid #2196f3;
+    border-radius: 4px;
+}
+.imageOperate_ContentNoticeImageActive:after
+{
+    content: "";
+    position: absolute;
+    top: 54px;
+    left: 22px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #2196f3 transparent transparent transparent;
+    border-width: 4px;
+}
+.imageOperate_ContentDiv
+{
+    clear: both;
+}
+.imageOperate_ContentNoticeExpandDiv
+{
+    border: 1px solid #e1e6eb;
+    padding: 0 4px 4px 4px;
+    min-width: 260px;
+}
+.imageOperate_ContentText
+{
+    padding: 0 5px;
+}
+.imageOperate_ContentTextInfo
+{
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+    padding: 5px 10px 5px 14px;
+}
+.imageOperate_ImagePackUp
+{
+    background: url("image/rwzz_shrink.png") no-repeat 0 center;
+}
+.imageOperate_ImagePackUp:hover
+{
+    background: url("image/rwzz_shrink_pre.png") no-repeat 0 center;
+    color: #0e77ca;
+    cursor: pointer;
+}
+.imageOperate_ImageFullScreen
+{
+    background: url("image/rwzz_fullscreen.png") no-repeat 0 center;
+}
+.imageOperate_ImageFullScreen:hover
+{
+    background: url("image/rwzz_fullscreen_pre.png") no-repeat 0 center;
+    color: #0e77ca;
+    cursor: pointer;
+}
+.imageOperate_ImageTurnLeft
+{
+    background: url("image/rwzz_rotate_left.png") no-repeat 0 center;
+}
+.imageOperate_ImageTurnLeft:hover
+{
+    background: url("image/rwzz_rotate_left_pre.png") no-repeat 0 center;
+    color: #0e77ca;
+    cursor: pointer;
+}
+.imageOperate_ImageTurnRight
+{
+    background: url("image/rwzz_rotate_right.png") no-repeat 0 center;
+}
+.imageOperate_ImageTurnRight:hover
+{
+    background: url("image/rwzz_rotate_right_pre.png") no-repeat 0 center;
+    color: #0e77ca;
+    cursor: pointer;
+}
+.imageOperate_ContentNoticeExpandImg
+{
+    max-height: 330px;
+    max-width: 600px;
+}

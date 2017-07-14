@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>图片控件demo</title>
+    <script src="../../resources/scripts/jquery-1.11.3.min.js"></script>
+    <script src="jquery.imageOperate.js" type="text/javascript"></script>
+    <style>
+        #divContent {
+            width: 800px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="divContent">
+    </div>
+    <script>
+        window.onload = function () {
+            $("#divContent").imageOperation({
+                dataSource: [{
+                    filePath: "http://101.37.87.108:10010/mlsc-upload/service/fw/file/upload/view?fingerPrint=5dc77707d28edd00c3acddd930685a0c",
+                    fileName: "1.png"
+                }, {
+                    filePath: "http://101.37.87.108:10010/mlsc-upload/service/fw/file/upload/view?fingerPrint=5dc77707d28edd00c3acddd930685a0c",
+                    fileName: "2.png"
+                }, {
+                    filePath: "http://101.37.87.108:10010/mlsc-upload/service/fw/file/upload/view?fingerPrint=5dc77707d28edd00c3acddd930685a0c",
+                    fileName: "3.png"
+                }],
+                urlField: "filePath"
+            });
+        };
+    </script>
+</body>
+</html>

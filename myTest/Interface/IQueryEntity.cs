@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace myTest
+namespace myTest.Interface
 {
-    class Program
+    interface IQueryEntity
     {
-        static void Main(string[] args)
-        {
-
-        }
+        List<string> check();
     }
 }

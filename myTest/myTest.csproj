@@ -43,11 +43,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IQueryEntity.cs" />
+    <Compile Include="Interface\QueryEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="plugInUnit\imageHelper\demo.html" />
+    <Content Include="plugInUnit\imageHelper\image\close_active.png" />
+    <Content Include="plugInUnit\imageHelper\image\evidence.png" />
+    <Content Include="plugInUnit\imageHelper\image\evidenceClick.png" />
+    <Content Include="plugInUnit\imageHelper\image\evidenceList.png" />
+    <Content Include="plugInUnit\imageHelper\image\evidenceListClick.png" />
+    <Content Include="plugInUnit\imageHelper\image\image_cxjz.png" />
+    <Content Include="plugInUnit\imageHelper\image\imgUnload.png" />
+    <Content Include="plugInUnit\imageHelper\image\record.png" />
+    <Content Include="plugInUnit\imageHelper\image\recordClick.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwgz_close.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwgz_close_pre.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_fullscreen.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_fullscreen_pre.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_rotate_left.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_rotate_left_pre.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_rotate_right.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_rotate_right_pre.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_shrink.png" />
+    <Content Include="plugInUnit\imageHelper\image\rwzz_shrink_pre.png" />
+    <Content Include="plugInUnit\imageHelper\jquery.imageOperate.css" />
+    <Content Include="plugInUnit\imageHelper\jquery.imageOperate.js" />
+    <Content Include="resources\scripts\jquery-1.11.3.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="web\scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
