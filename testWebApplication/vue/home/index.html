@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1473762766_7074292.css">
+    <link href="../style/page.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="app">
+        <div>
+
+            {{ message | capitalize }}
+        </div>
+        <ol>
+            <todo-item v-for="entity in entityList"
+                       v-bind:entity="entity"
+                       v-bind:key="entity.id"></todo-item>
+        </ol>
+        <br />
+
+        {{ message }}
+        <div>
+            <span v-bind:title="message">
+                鼠标悬停几秒钟查看此处动态绑定的提示信息！
+            </span>
+        </div>
+        <p v-if="a">看到</p>
+        <div>
+            <ol>
+                <li v-for="entity in entityList">
+                    {{ entity.text }}
+                </li>
+            </ol>
+        </div>
+        <div>
+            <p>{{ message }}</p>
+            <button @click="reverseMessage">逆转消息</button>
+        </div>
+        <br />
+        <input v-model="message" />
+        <br />
+    </div>
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="../../resources/scripts/vue/vue-router.js"></script>
+    <script src="index.js"></script>
+</body>
+</html> 

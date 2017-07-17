@@ -129,11 +129,17 @@
     <Content Include="plugInUnit\imageHelper\jquery.imageOperate.css" />
     <Content Include="plugInUnit\imageHelper\jquery.imageOperate.js" />
     <Content Include="resources\scripts\jquery-1.11.3.min.js" />
+    <Content Include="resources\scripts\vue\vue.js" />
+    <Content Include="resources\scripts\vue\vue-router.js" />
+    <Content Include="vue\home\index.html" />
+    <Content Include="vue\home\index.js" />
+    <Content Include="vue\style\page.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
