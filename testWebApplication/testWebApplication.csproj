@@ -76,6 +76,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -94,10 +102,26 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="html5\audio\audio.html" />
+    <Content Include="html5\audio\demo.aspx" />
+    <Content Include="html5\video\0fd92594-f568-4c10-b6d4-1986666019fb.mp4" />
+    <Content Include="html5\video\demo.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="html5\audio\bdbeee99-24d2-4dcc-8c8a-2550565bb673.amr" />
+    <None Include="t4\Template\DBSchema.ttinclude">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBSchema.cs</LastGenOutput>
+    </None>
+    <Content Include="t4\demo.aspx" />
+    <Content Include="t4\Template\DBSchema.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBSchema1.cs</LastGenOutput>
+    </Content>
+    <Content Include="utilityClass\ffmpeg\ffmpeg.exe" />
+    <Content Include="web\objectToListString\WebForm1.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,7 +161,49 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="html5\audio\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="html5\audio\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utilityClass\audio\AmrToMp3.cs" />
+    <Compile Include="plugInUnit\validate\ValidateType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="t4\DBHelper.cs" />
+    <Compile Include="t4\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="t4\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="t4\Template\DBHelper.cs" />
+    <Compile Include="t4\Template\DBSchema.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSchema.ttinclude</DependentUpon>
+    </Compile>
+    <Compile Include="t4\Template\DBSchema1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSchema.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t4\Template\DtoBaseEntity.cs" />
+    <Compile Include="t4\Template\Template.cs" />
+    <Compile Include="utilityClass\cmd\ExcuteCmd.cs" />
+    <Compile Include="utilityClass\generic\GenericData.cs" />
+    <Compile Include="web\objectToListString\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\objectToListString\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
