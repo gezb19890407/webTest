@@ -11,7 +11,7 @@ namespace utilityClass.audio
     {
         public static void ConvertToMp3(string pathBefore, string pathLater)
         {
-            string c = GenericData.BaseDirectory + "utilityClass/ffmpeg/" + @"ffmpeg.exe -i " + pathBefore + " " + pathLater;
+            string c = GenericData.BaseDirectory + "utilityClass/ffmpeg/" + @"ffmpeg.exe -i /y " + pathBefore + " " + pathLater;
             ExcuteCmd.Execute(c);
         }
     }

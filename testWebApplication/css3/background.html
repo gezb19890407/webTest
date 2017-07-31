@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8" />
+    <title>background-image_CSS参考手册_web前端开发参考手册系列</title>
+    <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+    <style>
+        .test strong {
+            font-size: 16px;
+        }
+
+        .test .url p {
+            padding-top: 200px;
+            background-image: url(skin/p_103x196_1.jpg);
+            background-repeat: no-repeat;
+        }
+
+        .test .gradient p {
+            height: 100px;
+            background-image: linear-gradient(to top, #45B5DA, #0382AD);
+        }
+
+        .test .multiple p {
+            padding-top: 200px;
+            background-image: url(skin/p_103x196_1.jpg), url(skin/p_103x196_2.jpg), url(skin/p_103x196_3.jpg);
+            background-repeat: no-repeat;
+            background-position: 0 0, 100px 0, 200px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul class="test">
+        <li class="url">
+            <strong>使用url()引入背景图像</strong>
+            <p>使用url()可以是绝对或相对路径</p>
+        </li>
+        <li class="gradient">
+            <strong>使用渐变绘制背景图像</strong>
+            <p>渐变种类有: linear-gradient, radial-gradient, repeating-linear-gradient, repeating-radial-gradient</p>
+        </li>
+        <li class="multiple">
+            <strong>多重背景图</strong>
+            <p>多重背景图可以是url()或gradient的混合方式</p>
+        </li>
+    </ul>
+</body>
+</html>

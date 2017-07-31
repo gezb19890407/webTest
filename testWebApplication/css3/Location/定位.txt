@@ -1,0 +1,12 @@
+﻿http://www.css88.com/book/css/properties/positioning/position.htm
+
+定位 Positioning
+属性	版本	继承性	描述
+position	CSS2/3	无	检索对象的定位方式
+z-index	CSS2	无	检索或设置对象的层叠顺序
+top	CSS2	无	检索或设置对象参照相对物顶边界向下偏移位置。
+right	CSS2	无	检索或设置对象参照相对物右边界向左偏移位置。
+bottom	CSS2	无	检索或设置对象参照相对物底边界向上偏移位置。
+left	CSS2	无	检索或设置对象参照相对物左边界向右偏移位置。
+clip	CSS2/3	无	检索或设置对象的可视区域。区域外的部分是透明的
+紫色 链接表示该属性在CSS3有修改或者增加了新的属性值；橙色 链接表示该属性是CSS3新增属性

@@ -102,8 +102,36 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css3\background.html" />
+    <Content Include="css3\border\demo.html" />
+    <Content Include="css3\border\demo1.html" />
+    <Content Include="css3\Location\position\demo.html" />
+    <Content Include="css3\Location\定位.txt" />
+    <Content Include="designPattern\combinationModel\ReadMe.txt" />
+    <Content Include="designPattern\iterator\demo.aspx" />
+    <Content Include="designPattern\iterator\ReadMe.txt" />
+    <Content Include="designPattern\stateMode\demo.aspx" />
+    <Content Include="designPattern\stateMode\readme.txt" />
     <Content Include="html5\audio\audio.html" />
     <Content Include="html5\audio\demo.aspx" />
+    <Content Include="html5\drag\demo1.css" />
+    <Content Include="html5\drag\demo1.html" />
+    <Content Include="html5\drag\demo1.js" />
+    <Content Include="html5\firstMobileHtml\android.png" />
+    <Content Include="html5\firstMobileHtml\Android手机端推广页面.png" />
+    <Content Include="html5\firstMobileHtml\demo.html" />
+    <Content Include="html5\firstMobileHtml\icon.png" />
+    <Content Include="html5\firstMobileHtml\icon_80.png" />
+    <Content Include="html5\firstMobileHtml\IOS手机推广页面.png" />
+    <Content Include="html5\firstMobileHtml\new_file.css" />
+    <Content Include="html5\firstMobileHtml\new_file.html" />
+    <Content Include="html5\mobile\android.png" />
+    <Content Include="html5\mobile\icon.png" />
+    <Content Include="html5\mobile\new_file.css" />
+    <Content Include="html5\mobile\new_file.html" />
+    <Content Include="html5\outline\section\demo1.html" />
+    <None Include="html5\sass\scss\demo1.scss" />
+    <Content Include="html5\sass\scss\demo1.html" />
     <Content Include="html5\video\0fd92594-f568-4c10-b6d4-1986666019fb.mp4" />
     <Content Include="html5\video\demo.html" />
     <Content Include="packages.config" />
@@ -161,6 +189,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="designPattern\iterator\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="designPattern\iterator\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="designPattern\iterator\Iterator.cs" />
+    <Compile Include="designPattern\iterator\IteratorRealization.cs" />
+    <Compile Include="designPattern\iterator\GenericMenu.cs" />
+    <Compile Include="designPattern\iterator\SystemMenu.cs" />
+    <Compile Include="designPattern\stateMode\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="designPattern\stateMode\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="designPattern\stateMode\MachineState.cs" />
+    <Compile Include="designPattern\stateMode\orderState\Dobusiness.cs" />
+    <Compile Include="designPattern\stateMode\orderState\OrderInfoBll.cs" />
+    <Compile Include="designPattern\stateMode\orderState\OrderState.cs" />
+    <Compile Include="designPattern\stateMode\orderState\OrderStateEnum.cs" />
+    <Compile Include="designPattern\stateMode\orderState\OrderStateHelper.cs" />
+    <Compile Include="designPattern\stateMode\orderState\PendingAuditState.cs" />
+    <Compile Include="designPattern\stateMode\orderState\PendingSubmissionState.cs" />
+    <Compile Include="doubleRandom\IDoubleRandom.cs" />
     <Compile Include="html5\audio\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +248,7 @@
     <Compile Include="t4\Template\DtoBaseEntity.cs" />
     <Compile Include="t4\Template\Template.cs" />
     <Compile Include="utilityClass\cmd\ExcuteCmd.cs" />
+    <Compile Include="utilityClass\file\FileHelper.cs" />
     <Compile Include="utilityClass\generic\GenericData.cs" />
     <Compile Include="web\objectToListString\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

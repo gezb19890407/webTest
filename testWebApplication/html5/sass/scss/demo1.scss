@@ -1,0 +1,149 @@
+﻿$nav-color: #F90;
+
+nav {
+    $width: 100px;
+    width: $width;
+    color: $nav-color;
+}
+
+$link-color: blue;
+
+a {
+    color: $link-color;
+}
+
+#content {
+    article {
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1.4em;
+        }
+    }
+
+    aside {
+        background-color: #EEE;
+    }
+}
+
+article a {
+    color: blue;
+
+    &:hover {
+        color: red;
+    }
+}
+
+#content aside {
+    color: red;
+
+    body.ie & {
+        color: green;
+    }
+}
+
+.container {
+    h1, h2, h3 {
+        margin-bottom: .8em;
+    }
+}
+
+article {
+    ~ article {
+        border-top: 1px dashed #ccc;
+    }
+
+    > section {
+        background: #eee;
+    }
+
+    dl > {
+        dt {
+            color: #333;
+        }
+
+        dd {
+            color: #555;
+        }
+    }
+
+    nav + & {
+        margin-top: 0;
+    }
+}
+
+nav {
+    border: 1px solid #ccc {
+        left: 0px;
+        right: 0px;
+    }
+}
+
+.error {
+    border: 1px solid red;
+    background-color: #fdd;
+}
+
+.error a { //应用到.seriousError a
+    color: red;
+    font-weight: 100;
+}
+
+h1.error { //应用到hl.seriousError
+    font-size: 1.2rem;
+}
+
+.seriousError {
+    @extend .error;
+    border-width: 3px;
+}
+
+@mixin link-colors($normal, $hover, $visited) {
+    color: $normal;
+
+    &:hover {
+        color: $hover;
+    }
+
+    &:visited {
+        color: $visited;
+    }
+}
+
+a {
+    @include link-colors( $normal: blue, $visited: green, $hover: red );
+}
+
+$xs-width: 480px;
+$sm-width: 750px;
+$md-width: 992px;
+$lg-width: 1200px;
+
+$screen-width: ($xs-width,$sm-width,$md-width,$lg-width);
+
+$xs: 'screen and (min-width:#{$xs-width})'; //手机屏幕
+$sm: 'screen and (min-width:#{$sm-width})'; //pad屏幕
+$md: 'screen and (min-width:#{$md-width})'; //中等屏幕
+$lg: 'screen and (min-width:#{$lg-width})'; //大屏幕
+
+$screen: ($xs,$sm,$md,$lg); //屏幕的宽度,是一个集合
+
+@for $i from 1 through length($screen) {
+    @media #{nth($screen,$i)} {
+        .container {
+            width: nth($screen-width,$i);
+        }
+    }
+}
+
+$width: 60em;
+$border: 1px solid Gray;
+$center
+
+.width {
+    width: $width/3;
+    color: $link-color;
+    border: $border;
+}

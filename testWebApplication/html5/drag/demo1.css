@@ -1,0 +1,39 @@
+﻿body {
+    font-size: 84%;
+}
+
+.dustbin {
+    width: 100px;
+    height: 260px;
+    line-height: 1.4;
+    background-color: gray;
+    font-size: 36px;
+    font-family: "微软雅黑", "Yahei Mono";
+    text-align: center;
+    text-shadow: -1px -1px #bbb;
+    float: left;
+}
+
+.dragbox {
+    width: 500px;
+    padding-left: 20px;
+    float: left;
+}
+
+.draglist {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 2px dashed #ccc;
+    background-color: #eee;
+    cursor: move;
+}
+
+    .draglist:hover {
+        border-color: #cad5eb;
+        background-color: #f0f3f9;
+    }
+
+.dragremind {
+    padding-top: 2em;
+    clear: both;
+}
