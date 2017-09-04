@@ -1,0 +1,49 @@
+﻿body {
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+.pagination li {
+    list-style: none;
+    display: inline-block;
+}
+
+.nextPage, .lastPage, .page {
+    border: 1px solid #ddd;
+    text-decoration: none;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.5;
+    color: #337ab7;
+    cursor: pointer;
+}
+
+.page {
+    width: 34px;
+    height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0;
+    line-height: 38px;
+}
+
+.pagination li:hover {
+    background-color: #eee;
+}
+
+.highLight {
+    background: #f2f2f2;
+}
+
+.darkLight {
+    color: grey;
+    cursor: default;
+}

@@ -1,0 +1,290 @@
+﻿//1、浏览器前缀
+@mixin css3($property, $value) {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+        #{$prefix}#{$property}: $value;
+    }
+}
+//2、响应式断点
+@mixin breakpoint($point) {
+    @if $point == large {
+        @media (min-width: 64.375em) {
+            @content;
+        }
+    }
+    @else if $point == medium {
+        @media (min-width: 50em) {
+            @content;
+        }
+    }
+    @else if $point == small {
+        @media (min-width: 37.5em) {
+            @content;
+        }
+    }
+}
+//3、Retina图片
+@mixin image-2x($image, $width, $height) {
+    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        // on retina, use image that's scaled by 2
+        background-image: url($image);
+        background-size: $width $height;
+    }
+}
+//4、清除浮动
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+//5、Black和White
+@function black($opacity) {
+    @return rgba(0,0,0,$opacity)
+}
+
+@function white($opacity) {
+    @return rgba(255,255,255,$opacity)
+}
+//6、内阴影和外阴影
+@mixin box-emboss($opacity, $opacity2) {
+    box-shadow: white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+//7、透明度
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+//8、绝对定位
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+}
+//9、行高
+@mixin line-height($heightValue: 12 ) {
+    line-height: $heightValue + px; //fallback for old browsers
+    line-height: (0.125 * $heightValue) + rem;
+}
+//10、图片标题动画
+@mixin animated-caption($font-color, $bg-color, $bg-opacity, $padding, $transition-speed) {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+
+    & img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    & span.outer {
+        display: block;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: $padding;
+        color: $font-color;
+        position: absolute;
+        bottom: -100px;
+        -webkit-transition: bottom $transition-speed ease;
+        -moz-transition: bottom $transition-speed ease;
+        -o-transition: bottom $transition-speed ease;
+        -ms-transition: bottom $transition-speed ease;
+        transition: bottom $transition-speed ease;
+
+        & span.inner {
+            margin: 0px;
+            position: relative;
+        }
+
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            z-index: 0;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background: $bg-color;
+            filter: alpha(opactiy=($bg-opacity * 100));
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$bg-opacity * 100})";
+            -moz-opacity: $bg-opacity;
+            -khtml-opacity: $bg-opacity;
+            opacity: $bg-opacity;
+        }
+    }
+
+    &:hover span.outer {
+        bottom: 0px;
+    }
+}
+//inline-block inline-block在CSS中经常会有碰到，比如说我们需要制作一个水平排列的表单，其中 label标签需要和表单控件（比如说input[type="text"]、input[type="checkbox"]等）垂直居中对齐，我们常用的就是给他们加上下面的样式：
+$inline-block-alignment: middle !default;
+$legacy-support-for-ie: true !default;
+//设置一个默认的对齐方式
+// 提供一个跨浏览器的方法来实现`display:inline-block`
+@mixin inline-block($alignment: $inline-block-alignment) {
+    display: inline-block;
+
+    @if $alignment and $alignment != none {
+        vertical-align: $alignment;
+    }
+
+    @if $legacy-support-for-ie {
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline;
+    }
+}
+//水平居中
+//六种居中样式：http: www.w3cplus.com/css/elements-horizontally-center-with-css.html
+@mixin horizontal-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+//浮动与重置浮动
+@mixin float($side: left) {
+    float: unquote($side);
+
+    @if $legacy-support-for-ie {
+        _display: inline;
+    }
+}
+
+@mixin reset-float($display: block) {
+    float: none;
+    display: $display;
+}
+//清除浮动clearfix
+@mixin clearfix {
+    @if $legacy-support-for-ie {
+        *zoom: 1;
+    }
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+%clearfix {
+    @include clearfix;
+}
+//图片替代文本 http: //www.w3cplus.com/css/ten-image-replace-text-with-css
+@mixin ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+
+    @if $legacy-support-for-ie {
+        *text-indent: -150%;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}
+
+%ir {
+    @include ir;
+}
+//隐藏元素
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+%hidden {
+    @include hidden;
+}
+//2.仅浏览器隐藏，屏幕阅读器不被隐藏
+@mixin visuallyhidden {
+    @if $legacy-support-for-ie {
+        clip: rect(0,0,0,0);
+    }
+
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    //扩展了`.visuallyhidden`，充许`.focusable`元素通过键盘获取
+    &.focusable:active, &.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+%visuallyhidden {
+    @include visuallyhidden;
+}
+//3.隐藏元素，但布局中占有空间
+@mixin invisible {
+    visibility: hidden;
+}
+
+%invisible {
+    @include invisible;
+}
+//截取文本text-overflow
+@mixin singleline-ellipsis($substract: 0) {
+    //`$substract`单位为%
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100% - $substract;
+}
+
+%singleline-ellipsis {
+    @include singleline-ellipsis;
+}
+//禁用样式disabled
+@mixin disabled($bgColor: #e6e6e6,$textColor: #ababab) {
+    background-color: $bgColor !important;
+    color: $textColor !important;
+    cursor: not-allowed !important;
+}
+//最小高度min-height
+@mixin min-height($height) {
+    min-height: $height;
+    height: auto !important;
+
+    @if $legacy-support-for-ie {
+        _height: $height;
+    }
+}
+//px转em
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}

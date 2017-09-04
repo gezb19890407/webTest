@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*三角形帮助类*/
+/*
+    $caret-width：用来设置三角形的大小
+    $border-width：设置边框的大小
+    $direction：设置三角形方向
+    $border-color：设置边框的颜色
+    $background-color：设置背景颜色
+*/
+.tips {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+  margin: 20px auto;
+  border: 1px solid orange;
+  border-radius: 3px; }
+  .tips .caret {
+    top: -10px;
+    left: 10px;
+    position: absolute; }
+    .tips .caret:before, .tips .caret:after {
+      content: "";
+      position: absolute; }
+    .tips .caret:before {
+      top: 0;
+      left: 0;
+      border-bottom: 10px solid orange;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent; }
+    .tips .caret:after {
+      left: 1px;
+      top: 1px;
+      border-bottom: 9px solid #fff;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent; }
+
+/*# sourceMappingURL=triangle.css.map */

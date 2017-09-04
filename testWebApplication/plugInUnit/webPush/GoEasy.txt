@@ -1,0 +1,118 @@
+﻿ASP.NET Web实时消息后台服务器推送技术---GoEasy
+http://www.cnblogs.com/EmmaGong/p/6022988.html
+
+越来越多的项目需要用到实时消息的推送与接收，怎样用ASP.NET实现最方便呢？我这里推荐大家使用GoEasy, 它是一款第三方推送服务平台，使用它的API可以轻松搞定实时推送！
+浏览器兼容性：GoEasy推送 支持websocket 和polling两种连接方式，从而可以支持IE6及其以上的所有版本，同时还支持其它浏览器诸如Firefox, Chrome, Safari等等。
+支持不同的开发语言：    GoEasy推送 提供了Restful API接口，无论你的后台程序用的是哪种语言都可以通过Restful API来实现后台实时推送。如：Java,PHP, C#, Ruby, Python, C, C++， ASP.NET,Node.js...
+支持后台及前台推送： 后台用Restful API， 前台用goeasy.js; 运用十分简单！
+ 
+ASP.NET Web实时消息后台服务器推送技术-GoEasy
+ 
+下面我介绍一下使用GoEasy的步骤：
+ 
+1. 你需要到goeasy官网上注册一个账号,并创建一个应用，应用创建好后系统会默认为它生成两个key: publish key和subscribe key
+ 
+2. 前台实时订阅及接收
+    只需要引入goeasy.js,然后调用goeasy的subscribe方法订阅一个channel即可，订阅时无论是用publish key还是subscribe key都可以。通过subscribe的参数 onMessage的回调函数可以实时接收到消息。
+ 
+3. 前台实时推送
+    还是需要引入goeasy.js（如果该页面已经引入了可不在引入）,然后调用goeasy的publish方法向已订阅的channel上推送消息即可，推送时只能用publish key。
+ 
+4. 后台实时推送
+     调用GoEasy Restful API， 用post方式访问http://goeasy.io/goeasy/publish， 同时还需要带上三个必要参数：
+    appkey: publish key
+    channel: 你订阅了的channel
+   content: 推送内容
+ 
+就是这么简单。
+下面我将之前写的一个小实例贴出来，里面用了Javascript 在web页面进行订阅，推送，接收，以及取消订阅的例子，里面的appkey用的是goeasy官方的demo 的appkey.
+
+    <html>  
+    <head>  
+    <title>GoEasy Test</title>  
+      
+    <script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>  
+    <script type="text/javascript">  
+        if(typeof GoEasy !== 'undefined'){  
+            var goEasy = new GoEasy({  
+                appkey: 'ba821151-e043-4dfb-a954-c73744c8d323',  
+                userId:"222",  
+                username:"22",  
+                onConnected:function(){  
+                    console.log("Connect to GoEasy success.");  
+                } ,  
+                onDisconnected:function(){  
+                    console.log("Disconnect to GoEasy server.");  
+                } ,  
+                onConnectFailed:function(error){  
+                    console.log("Connect to GoEasy failed, error code: "+ error.code+" Error message: "+ error.content);  
+                }  
+            });  
+        }  
+                  
+        subscribe();  
+        function subscribe(){  
+                 goEasy.subscribe({  
+                    channel: 'notification',  
+                    onMessage: function(message){  
+                        console.log('Meessage received:'+message.content);  
+                    },  
+                    onSuccess:function(){  
+      
+                        console.log("Subscribe the Channel successfully.");  
+      
+                    },  
+      
+                    onFailed: function(error){  
+      
+                        console.log("Subscribe the Channel failed, error code: "+ error.code + " error message: "+ error.content);  
+      
+                    }  
+      
+                });  
+      
+        }  
+                  
+         function publishMessage(){  
+              goEasy.publish({  
+                    channel: 'notification',  
+                    message: 'You received a new notification',  
+                    onSuccess:function(){  
+      
+                        console.log("Publish message success.");  
+      
+                    },  
+                    onFailed: function(error){  
+      
+                        console.log("Publish message failed, error code: "+ error.code +" Error message: "+ error.content);  
+      
+                    }  
+                });  
+           
+         }  
+                        
+         function unsubscribe(){  
+                    goEasy.unsubscribe({  
+                        channel:"notification",  
+                        onSuccess: function(){  
+      
+                            console.log("Cancel Subscription successfully.");  
+      
+                        },  
+                        onFailed: function(error){  
+      
+                            console.log("Cancel the subscrition failed, error code: "+ error.code + "error message: "+ error.content);  
+                        }  
+      
+                    });  
+                }  
+              
+     </script>  
+    </head>  
+    <body>  
+      <input type="button" value="publish" onclick="publishMessage()"/>  
+      <input type="button" value="unsubscribe" onclick="unsubscribe()"/>  
+      <input type="button" value="subscribe" onclick="subscribe()"/>  
+    </body>  
+    </html>  
+

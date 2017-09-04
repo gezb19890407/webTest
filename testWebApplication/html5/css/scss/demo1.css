@@ -1,40 +1,39 @@
-/*
-Error: Invalid CSS after "$center": expected ":", was ".width {"
-        on line 145 of D:\study\webTest\myTest\testWebApplication\html5\sass\scss\demo1.scss
+.border_radius {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  background-color: rebeccapurple;
+}
 
-140: 
-141: $width: 60em;
-142: $border: 1px solid Gray;
-143: $center
-144: 
-145: .width {
-146:     width: $width/3;
-147:     color: $link-color;
-148:     border: $border;
-149: }
+.page-wrap {
+  background-color: aquamarine;
+  border: 1px solid gray;
+  height: 20px;
+  width: 75%;
+}
+@media (min-width: 64.375em) {
+  .page-wrap {
+    width: 60%;
+  }
+}
+@media (min-width: 50em) {
+  .page-wrap {
+    width: 80%;
+  }
+}
+@media (min-width: 37.5em) {
+  .page-wrap {
+    width: 95%;
+  }
+}
 
-Backtrace:
-D:\study\webTest\myTest\testWebApplication\html5\sass\scss\demo1.scss:145
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:628:in `variable'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:391:in `run'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:63:in `process_result'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
-E:/Soft/sass/Koala/rubygems/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
-E:/Soft/sass/Koala/bin/sass:18:in `load'
-E:/Soft/sass/Koala/bin/sass:18:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"$center\": expected \":\", was \".width {\"\A         on line 145 of D:\study\webTest\myTest\testWebApplication\html5\sass\scss\demo1.scss\A \A 140: \A 141: $width: 60em;\A 142: $border: 1px solid Gray;\A 143: $center\A 144: \A 145: .width {\A 146:     width: $width/3;\A 147:     color: $link-color;\A 148:     border: $border;\A 149: }"; }
+/*# sourceMappingURL=demo1.css.map */

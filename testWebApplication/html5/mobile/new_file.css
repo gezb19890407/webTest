@@ -20,8 +20,9 @@ header {
 .content {
     background-image: url(icon.png);
     background-size: 2.5925925926rem;
+    /*background-position: center 4.4444444444rem;*/
     background-position: center 4.4444444444rem;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
 }
 
     .content div {
@@ -48,6 +49,7 @@ header {
         height: 1.2037037037rem;
         position: absolute;
         bottom: 4.1666666667rem;
+        margin: 0rem auto;
         left: 50%;
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);

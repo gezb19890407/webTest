@@ -1,0 +1,37 @@
+﻿//@baseFontSize: 192;
+
+@function s($px) {
+    @return ($px / 190) * 1rem;
+}
+
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+@function cell($num) {
+    @return ($num/12)*10rem;
+}
+
+$color: #fff #bcbcbc #666666 #90b0d6 #333333 #999999;
+$bg-color: gray #106db7 #0e77ca #dddddd #16a8ef;
+
+$font-size12: 12px;
+$font-size14: 14px;
+$font-size15: 15px;
+$font-size16: 16px;
+$font-size18: 18px;
+
+.u-middle {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

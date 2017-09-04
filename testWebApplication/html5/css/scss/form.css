@@ -1,0 +1,54 @@
+.u-middle {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+html, body, .content {
+  width: 10rem;
+  height: 100%;
+  overflow: hidden;
+  font-size: 62.5%;
+  margin: 0.05263rem auto; }
+
+header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px; }
+
+header div {
+  height: 0.63158rem;
+  line-height: 0.63158rem; }
+
+.border, .content table tr td {
+  border: 1px solid gray; }
+
+.content table tr td {
+  border-collapse: collapse;
+  height: 0.52632rem;
+  line-height: 0.52632rem;
+  text-align: center;
+  font-size: 12px;
+  position: relative; }
+
+.content table tr td.cell1 {
+  width: 2rem; }
+
+.content table tr td.cell2 {
+  width: 4rem; }
+
+.content table tr td.height3 {
+  height: 1.57895rem; }
+
+.content table tr td .right-bottom {
+  position: absolute;
+  width: 4.21053rem;
+  bottom: 0;
+  right: 0;
+  height: 1.05263rem; }
+
+.content table tr td .right-bottom .left {
+  text-align: left;
+  width: 100%; }
+
+/*# sourceMappingURL=form.css.map */

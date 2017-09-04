@@ -1,0 +1,66 @@
+﻿@import "../comon/formCommon";
+
+html, body, .content {
+    width: s(1900);
+    height: 100%;
+    overflow: hidden;
+    font-size: 62.5%;
+    margin: s(10) auto;
+}
+
+header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+header div {
+    height: s(120);
+    line-height: s(120);
+}
+
+@function border($border-width: 1) {
+    @return 1px solid nth($bg-color,1);
+}
+
+.border {
+    border: border();
+}
+
+.content table {
+}
+
+.content table tr td {
+    @extend .border;
+    border-collapse: collapse;
+    height: s(100);
+    line-height: s(100);
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+}
+
+.content table tr td.cell1 {
+    width: s(380);
+}
+
+.content table tr td.cell2 {
+    width: s(760);
+}
+
+.content table tr td.height3 {
+    height: s(300);
+}
+
+.content table tr td .right-bottom {
+    position: absolute;
+    width: s(800);
+    bottom: 0;
+    right: 0;
+    height: s(200);
+}
+
+.content table tr td .right-bottom .left {
+    text-align: left;
+    width: 100%;
+}

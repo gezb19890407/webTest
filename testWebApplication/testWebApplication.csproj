@@ -84,6 +84,42 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SCKJ.BasePlatform.Bussiness, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.BasePlatform.Bussiness.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.BasePlatform.DataEntity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.BasePlatform.DataEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.BasePlatform.DataEntityExt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.BasePlatform.DataEntityExt.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.BasePlatform.DataProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.BasePlatform.DataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.Common.Bussiness, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.Common.Bussiness.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.Common.Define, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.Common.Define.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.DataHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.DataHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.SSO.AuthenticateChildSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.SSO.AuthenticateChildSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="SCKJ.SSO.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SCKJ.SSO.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -102,6 +138,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="clrVia\objectEquals\demo.aspx" />
+    <Content Include="clrVia\packing\packDemo.aspx" />
     <Content Include="css3\background.html" />
     <Content Include="css3\border\demo.html" />
     <Content Include="css3\border\demo1.html" />
@@ -112,8 +150,23 @@
     <Content Include="designPattern\iterator\ReadMe.txt" />
     <Content Include="designPattern\stateMode\demo.aspx" />
     <Content Include="designPattern\stateMode\readme.txt" />
+    <Content Include="dll\SCKJ.BasePlatform.Bussiness.dll" />
+    <Content Include="dll\SCKJ.BasePlatform.DataEntity.dll" />
+    <Content Include="dll\SCKJ.BasePlatform.DataEntityExt.dll" />
+    <Content Include="dll\SCKJ.BasePlatform.DataProvider.dll" />
+    <Content Include="dll\SCKJ.Common.Bussiness.dll" />
+    <Content Include="dll\SCKJ.Common.Define.dll" />
+    <Content Include="dll\SCKJ.DataHelper.dll" />
+    <Content Include="dll\SCKJ.SSO.AuthenticateChildSystem.dll" />
+    <Content Include="dll\SCKJ.SSO.Common.dll" />
     <Content Include="html5\audio\audio.html" />
     <Content Include="html5\audio\demo.aspx" />
+    <Content Include="html5\css\comon\formCommon.css" />
+    <Content Include="html5\css\comon\placeholder.css" />
+    <Content Include="html5\css\comon\sassMixins.css" />
+    <Content Include="html5\css\comon\triangle.css" />
+    <Content Include="html5\css\scss\demo1.css" />
+    <Content Include="html5\css\scss\form.css" />
     <Content Include="html5\drag\demo1.css" />
     <Content Include="html5\drag\demo1.html" />
     <Content Include="html5\drag\demo1.js" />
@@ -125,13 +178,38 @@
     <Content Include="html5\firstMobileHtml\IOS手机推广页面.png" />
     <Content Include="html5\firstMobileHtml\new_file.css" />
     <Content Include="html5\firstMobileHtml\new_file.html" />
+    <Content Include="html5\form\form1.html" />
+    <Content Include="html5\form\script\flexible.js" />
+    <Content Include="html5\form\script\flexible_css.js" />
     <Content Include="html5\mobile\android.png" />
     <Content Include="html5\mobile\icon.png" />
     <Content Include="html5\mobile\new_file.css" />
     <Content Include="html5\mobile\new_file.html" />
     <Content Include="html5\outline\section\demo1.html" />
+    <Content Include="html5\css\comon\formCommon.css.map" />
+    <Content Include="html5\css\comon\placeholder.css.map" />
+    <Content Include="html5\css\comon\sassMixins.css.map" />
+    <Content Include="html5\css\comon\triangle.css.map" />
+    <Content Include="html5\css\scss\demo1.css.map" />
+    <Content Include="html5\css\scss\form.css.map" />
+    <Content Include="plugInUnit\webPush\GoEasy.txt" />
+    <Content Include="plugInUnit\webPush\WebPushDemo.aspx" />
+    <Content Include="vue\fileManage\fileManage.html" />
+    <Content Include="vue\fileManage\fileManage.js" />
+    <Content Include="vue\script\plugInUnit\pagination\pagination.css" />
+    <Content Include="vue\script\plugInUnit\pagination\pagination.js" />
+    <Content Include="vue\style\button.css" />
+    <Content Include="vue\user\user.html" />
+    <Content Include="web\NewFolder1\demo.html" />
+    <Content Include="web\parallel\demo.aspx" />
+    <Content Include="web\sso\pageRedirect.aspx" />
     <None Include="html5\sass\scss\demo1.scss" />
+    <None Include="html5\sass\comon\triangle.scss" />
+    <None Include="html5\sass\comon\placeholder.scss" />
+    <None Include="html5\sass\comon\sassMixins.scss" />
+    <None Include="html5\sass\comon\formCommon.scss" />
     <Content Include="html5\sass\scss\demo1.html" />
+    <None Include="html5\sass\scss\form.scss" />
     <Content Include="html5\video\0fd92594-f568-4c10-b6d4-1986666019fb.mp4" />
     <Content Include="html5\video\demo.html" />
     <Content Include="packages.config" />
@@ -150,6 +228,7 @@
     </Content>
     <Content Include="utilityClass\ffmpeg\ffmpeg.exe" />
     <Content Include="web\objectToListString\WebForm1.aspx" />
+    <Content Include="vue\script\vue2.4.2.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,9 +265,25 @@
     <Content Include="vue\home\index.html" />
     <Content Include="vue\home\index.js" />
     <Content Include="vue\style\page.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clrVia\objectEquals\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clrVia\objectEquals\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clrVia\packing\packDemo.aspx.cs">
+      <DependentUpon>packDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clrVia\packing\packDemo.aspx.designer.cs">
+      <DependentUpon>packDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="designPattern\iterator\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,6 +317,14 @@
     </Compile>
     <Compile Include="html5\audio\demo.aspx.designer.cs">
       <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="plugInUnit\webPush\HttpClientUtil.cs" />
+    <Compile Include="plugInUnit\webPush\WebPushDemo.aspx.cs">
+      <DependentUpon>WebPushDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plugInUnit\webPush\WebPushDemo.aspx.designer.cs">
+      <DependentUpon>WebPushDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="utilityClass\audio\AmrToMp3.cs" />
     <Compile Include="plugInUnit\validate\ValidateType.cs" />
@@ -257,11 +360,35 @@
     <Compile Include="web\objectToListString\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="web\parallel\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\parallel\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\sso\pageRedirect.aspx.cs">
+      <DependentUpon>pageRedirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\sso\pageRedirect.aspx.designer.cs">
+      <DependentUpon>pageRedirect.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="MSScriptControl">
+      <Guid>{0E59F1D2-1FBE-11D0-8FF2-00A0D10038BC}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

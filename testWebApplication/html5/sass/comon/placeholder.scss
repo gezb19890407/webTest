@@ -1,0 +1,100 @@
+﻿$pseudo-phprefix: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
+$ph-styles: ( font-family: sans-serif, font-size: medium, font-style: normal, font-weight: normal, color: inherit, letter-spacing : normal, line-height: normal, text-align: inherit, text-decoration: inherit, padding: 0 );
+
+@mixin placeholder-theme($styles) {
+    @each $pseudo in $pseudo-phprefix {
+
+        @at-root #{&}#{$pseudo} {
+            @each $key, $value in $styles {
+                #{$key}: #{$value};
+            }
+        }
+    }
+}
+
+@mixin placeholder {
+    @each $pseudo in $pseudo-phprefix {
+
+        @at-root #{&}#{$pseudo} {
+            @content
+        }
+    }
+}
+
+@include placeholder {
+    color: red;
+}
+
+input {
+    @include placeholder-theme($ph-styles);
+}
+
+$jpinput-height: 40px;
+$jpinput-radius: 4px;
+$jpinput-padding: 10px 16px;
+$jpinput-bg: #fff;
+$jpinput-color: #4F4137;
+$jpinput-ph-color: $jpinput-color;
+$jpinput-phide-color: $jpinput-bg;
+
+input {
+    appearance: none;
+    box-sizing: border-box;
+    border-radius: $jpinput-radius;
+    display: inline-block;
+    outline: 0;
+    width: 100%;
+}
+/*输入框美化*/
+.jpinput {
+    height: $jpinput-height;
+    padding: $jpinput-padding;
+    transition: transform 225ms ease-in-out;
+    background: $jpinput-bg;
+    color: $jpinput-color;
+
+    @include placeholder {
+        position: relative;
+        top: 0;
+        left: 0;
+        transition: all 300ms ease-in-out;
+        color: rgba($jpinput-ph-color, .5);
+    }
+}
+
+.jpinput::-webkit-input-placeholder[style*=hidden] {
+    transform: translateY(-$jpinput-height);
+    opacity: 1;
+    visibility: visible !important;
+    color: $jpinput-phide-color;
+}
+
+$slabel-theme: ( border: 0, radius: 0, padding: 0, font: inherit, bg: white, label-bg: white, label-color: inherit, error-color: #E82C0C, placeholder-color: #B9E0D6, success-color: #5C832F );
+
+@mixin slabel-theme {
+    @each $key, $value in $slabel-theme {
+        #{$key}: #{$value};
+    }
+}
+
+.slabel {
+    @include slabel-theme;
+}
+
+$select-arrow: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE0LjgzIDE2LjQybDkuMTcgOS4xNyA5LjE3LTkuMTcgMi44MyAyLjgzLTEyIDEyLTEyLTEyeiIvPjxwYXRoIGQ9Ik0wLS43NWg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+';
+$select-padding: 0;
+
+select {
+    border-radius: 0;
+    -webkit-appearance: none; // autoprefixer won’t add this and we still need it
+    appearance: none;
+    cursor: pointer;
+    padding: $select-padding;
+    width: 100%;
+
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        background-image: url(#{$select-arrow});
+        background-position: right 0 top 50%;
+        background-repeat: no-repeat;
+    }
+}

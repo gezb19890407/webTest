@@ -1,0 +1,104 @@
+﻿/*三角形帮助类*/
+
+/*
+    $caret-width：用来设置三角形的大小
+    $border-width：设置边框的大小
+    $direction：设置三角形方向
+    $border-color：设置边框的颜色
+    $background-color：设置背景颜色
+*/
+@mixin caret($position,$caret-width,$border-width,$direction,$border-color,$background-color) {
+    position: $position;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+    }
+
+    @if $direction == top {
+        &:before {
+            top: 0;
+            left: 0;
+            border-bottom: $caret-width solid $border-color;
+            border-left: $caret-width solid transparent;
+            border-right: $caret-width solid transparent;
+        }
+
+        &:after {
+            left: $border-width;
+            top: $border-width;
+            border-bottom: ($caret-width - $border-width) solid $background-color;
+            border-left: ($caret-width - $border-width) solid transparent;
+            border-right: ($caret-width - $border-width) solid transparent;
+        }
+    }
+    @else if $direction == right {
+        &:before {
+            top: 0;
+            left: 0;
+            border-left: $caret-width solid $border-color;
+            border-top: $caret-width solid transparent;
+            border-bottom: $caret-width solid transparent;
+        }
+
+        &:after {
+            left: 0;
+            top: $border-width;
+            border-left: ($caret-width - $border-width) solid $background-color;
+            border-top: ($caret-width - $border-width) solid transparent;
+            border-bottom: ($caret-width - $border-width) solid transparent;
+        }
+    }
+    @else if $direction == bottom {
+        &:before {
+            top: 0;
+            left: 0;
+            border-top: $caret-width solid $border-color;
+            border-left: $caret-width solid transparent;
+            border-right: $caret-width solid transparent;
+        }
+
+        &:after {
+            left: $border-width;
+            top: 0;
+            border-top: ($caret-width - $border-width) solid $background-color;
+            border-left: ($caret-width - $border-width) solid transparent;
+            border-right: ($caret-width - $border-width) solid transparent;
+        }
+    }
+    @else if $direction == left {
+        &:before {
+            top: 0;
+            left: 0;
+            border-right: $caret-width solid $border-color;
+            border-top: $caret-width solid transparent;
+            border-bottom: $caret-width solid transparent;
+        }
+
+        &:after {
+            left: $border-width;
+            top: $border-width;
+            border-right: ($caret-width - $border-width) solid $background-color;
+            border-top: ($caret-width - $border-width) solid transparent;
+            border-bottom: ($caret-width - $border-width) solid transparent;
+        }
+    }
+}
+
+.tips {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    margin: 20px auto;
+    border: 1px solid orange;
+    border-radius: 3px;
+
+    .caret {
+        top: -10px;
+        left: 10px;
+        @include caret(absolute,10px,1px,top,orange,#fff);
+    }
+}
