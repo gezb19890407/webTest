@@ -138,6 +138,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="clrVia\friendAssembly\demo.aspx" />
     <Content Include="clrVia\objectEquals\demo.aspx" />
     <Content Include="clrVia\packing\packDemo.aspx" />
     <Content Include="css3\background.html" />
@@ -270,6 +271,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clrVia\friendAssembly\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clrVia\friendAssembly\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="clrVia\objectEquals\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
