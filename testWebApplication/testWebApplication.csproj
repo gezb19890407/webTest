@@ -43,6 +43,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AASV.DataConvert, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AASV.DataConvert.1.1.23\lib\AASV.DataConvert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AASV.Log4NetPack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AASV.Log4NetPack.1.0.4\lib\AASV.Log4NetPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AASV.SqlServerKit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AASV.SqlServerKit.1.1.19\lib\AASV.SqlServerKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -120,6 +140,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dll\SCKJ.SSO.Common.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Caching">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Runtime.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -193,6 +218,8 @@
     <Content Include="html5\css\comon\triangle.css.map" />
     <Content Include="html5\css\scss\demo1.css.map" />
     <Content Include="html5\css\scss\form.css.map" />
+    <Content Include="log.xml" />
+    <Content Include="log4net.config" />
     <Content Include="plugInUnit\webPush\GoEasy.txt" />
     <Content Include="plugInUnit\webPush\WebPushDemo.aspx" />
     <Content Include="vue\fileManage\fileManage.html" />
@@ -201,9 +228,15 @@
     <Content Include="vue\script\plugInUnit\pagination\pagination.js" />
     <Content Include="vue\style\button.css" />
     <Content Include="vue\user\user.html" />
+    <Content Include="web\classValueTest\classValue.aspx" />
+    <Content Include="web\classValueTest\readme.txt" />
+    <Content Include="web\log4netTest\log4netDemo.aspx" />
     <Content Include="web\NewFolder1\demo.html" />
     <Content Include="web\parallel\demo.aspx" />
+    <Content Include="web\sqlError\sqlErrorDemo.aspx" />
     <Content Include="web\sso\pageRedirect.aspx" />
+    <Content Include="web\updateListValue\updateListValueDemo.aspx" />
+    <Content Include="work\amazonSync\productSync\productSyncDemo.aspx" />
     <None Include="html5\sass\scss\demo1.scss" />
     <None Include="html5\sass\comon\triangle.scss" />
     <None Include="html5\sass\comon\placeholder.scss" />
@@ -291,6 +324,45 @@
     <Compile Include="clrVia\packing\packDemo.aspx.designer.cs">
       <DependentUpon>packDemo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dbHelper\baseData\CommandCustom.cs" />
+    <Compile Include="dbHelper\baseData\DbTypeCustom.cs" />
+    <Compile Include="dbHelper\dbCustom\DbTypeHelper.cs" />
+    <Compile Include="dbHelper\dbCustom\CommandCustomHelper.cs" />
+    <Compile Include="dbHelper\dbCustom\CommandStaticHelper.cs" />
+    <Compile Include="dbHelper\dbCustom\DataBaseCheckParam.cs" />
+    <Compile Include="dbHelper\dbCustom\EntityToCommandCustom.cs" />
+    <Compile Include="dbHelper\dbCustom\EntityToCommandStaticHelper.cs" />
+    <Compile Include="dbHelper\enumCustom\FilterDateTimeConditionTypeCustom.cs" />
+    <Compile Include="dbHelper\baseData\FilterDateTimeDataCustom.cs" />
+    <Compile Include="dbHelper\baseData\FilterObjectDataCustom.cs" />
+    <Compile Include="dbHelper\baseData\ParameterCustom.cs" />
+    <Compile Include="dbHelper\enumCustom\EnumDbResultStatus.cs" />
+    <Compile Include="dbHelper\enumCustom\EnumDBAction.cs" />
+    <Compile Include="dbHelper\interfaceCustom\IDbResultCustom.cs" />
+    <Compile Include="dbHelper\interfaceCustom\IEntityToCommandCustom.cs" />
+    <Compile Include="dbHelper\sqlCustom\DbResultCustom.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlDefaultPropertyName.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlEntityToCommandCustom.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlEntityToCommandStaticHelper.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlConnectionCustom.cs" />
+    <Compile Include="dbHelper\config\ConfigHelper.cs" />
+    <Compile Include="dbHelper\interfaceCustom\ICommandCustomHelper.cs" />
+    <Compile Include="dbHelper\interfaceCustom\IDbTypeCustom.cs" />
+    <Compile Include="dbHelper\interfaceCustom\IConnectionCustom.cs" />
+    <Compile Include="dbHelper\interfaceCustom\ITransactionCustom.cs" />
+    <Compile Include="dbHelper\baseData\ConnectionCustom.cs" />
+    <Compile Include="dbHelper\baseData\FilterConditionRelationTypeCustom.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlCommandHelper.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlCommandStaticHelper.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlCommandCustom.cs" />
+    <Compile Include="dbHelper\baseData\ParameterCollectionCustom.cs" />
+    <Compile Include="dbHelper\enumCustom\ComparisonTypeCustom.cs" />
+    <Compile Include="dbHelper\enumCustom\DatabaseType.cs" />
+    <Compile Include="dbHelper\interfaceCustom\IParameterCustom.cs" />
+    <Compile Include="dbHelper\interfaceCustom\IParameterCollectionCustom.cs" />
+    <Compile Include="dbHelper\interfaceCustom\ICommandCustom.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlDbTypeCustom.cs" />
+    <Compile Include="dbHelper\sqlCustom\SqlTransactionCustom.cs" />
     <Compile Include="designPattern\iterator\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -360,6 +432,22 @@
     <Compile Include="utilityClass\cmd\ExcuteCmd.cs" />
     <Compile Include="utilityClass\file\FileHelper.cs" />
     <Compile Include="utilityClass\generic\GenericData.cs" />
+    <Compile Include="web\classValueTest\classValue.aspx.cs">
+      <DependentUpon>classValue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\classValueTest\classValue.aspx.designer.cs">
+      <DependentUpon>classValue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\log4netTest\CacheBaseAppender.cs" />
+    <Compile Include="web\log4netTest\CustomLogManager.cs" />
+    <Compile Include="web\log4netTest\log4netDemo.aspx.cs">
+      <DependentUpon>log4netDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\log4netTest\log4netDemo.aspx.designer.cs">
+      <DependentUpon>log4netDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="web\objectToListString\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -374,6 +462,13 @@
     <Compile Include="web\parallel\demo.aspx.designer.cs">
       <DependentUpon>demo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="web\sqlError\sqlErrorDemo.aspx.cs">
+      <DependentUpon>sqlErrorDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\sqlError\sqlErrorDemo.aspx.designer.cs">
+      <DependentUpon>sqlErrorDemo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="web\sso\pageRedirect.aspx.cs">
       <DependentUpon>pageRedirect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -381,6 +476,30 @@
     <Compile Include="web\sso\pageRedirect.aspx.designer.cs">
       <DependentUpon>pageRedirect.aspx</DependentUpon>
     </Compile>
+    <Compile Include="web\updateListValue\updateListValueDemo.aspx.cs">
+      <DependentUpon>updateListValueDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\updateListValue\updateListValueDemo.aspx.designer.cs">
+      <DependentUpon>updateListValueDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="work\amazonSync\helper\DbBase.cs" />
+    <Compile Include="work\amazonSync\helper\DbHelper.cs" />
+    <Compile Include="work\amazonSync\helper\DbHelperExtend.cs" />
+    <Compile Include="work\amazonSync\helper\IDbBase.cs" />
+    <Compile Include="work\amazonSync\productSync\AmazonDataAccess_ListingData.cs" />
+    <Compile Include="work\amazonSync\productSync\AmazonSKUPrice.cs" />
+    <Compile Include="work\amazonSync\productSync\DTO\AmListingDataDto.cs" />
+    <Compile Include="work\amazonSync\productSync\ListingsDataModel.cs" />
+    <Compile Include="work\amazonSync\productSync\module\T_Am_ListingData.cs" />
+    <Compile Include="work\amazonSync\productSync\productSyncDemo.aspx.cs">
+      <DependentUpon>productSyncDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="work\amazonSync\productSync\productSyncDemo.aspx.designer.cs">
+      <DependentUpon>productSyncDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="work\amazonSync\productSync\ProductSyncHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -395,6 +514,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dbHelper\iDalCustom\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
